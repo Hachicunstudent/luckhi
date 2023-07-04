@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web App</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Nhập thông tin 24 chỉ số</h1>
+  <form id="fingerForm">
+    <h2>Tay trái</h2>
+    <label for="tay_trai_1">Tay trái 1:</label>
+    <input type="text" id="tay_trai_1" name="tay_trai_1"><br>
+    <label for="tay_trai_2">Tay trái 2:</label>
+    <input type="text" id="tay_trai_2" name="tay_trai_2"><br>
+    <label for="tay_trai_3">Tay trái 3:</label>
+    <input type="text" id="tay_trai_3" name="tay_trai_3"><br>
+    <label for="tay_trai_4">Tay trái 4:</label>
+    <input type="text" id="tay_trai_4" name="tay_trai_4"><br>
+    <label for="tay_trai_5">Tay trái 5:</label>
+    <input type="text" id="tay_trai_5" name="tay_trai_5"><br>
+    <label for="tay_trai_6">Tay trái 6:</label>
+    <input type="text" id="tay_trai_6" name="tay_trai_6"><br>
+
+    <h2>Tay phải</h2>
+    <label for="tay_phai_1">Tay phải 1:</label>
+    <input type="text" id="tay_phai_1" name="tay_phai_1"><br>
+    <label for="tay_phai_2">Tay phải 2:</label>
+    <input type="text" id="tay_phai_2" name="tay_phai_2"><br>
+    <label for="tay_phai_3">Tay phải 3:</label>
+    <input type="text" id="tay_phai_3" name="tay_phai_3"><br>
+    <label for="tay_phai_4">Tay phải 4:</label>
+    <input type="text" id="tay_phai_4" name="tay_phai_4"><br>
+    <label for="tay_phai_5">Tay phải 5:</label>
+    <input type="text" id="tay_phai_5" name="tay_phai_5"><br>
+    <label for="tay_phai_6">Tay phải 6:</label>
+    <input type="text" id="tay_phai_6" name="tay_phai_6"><br>
+<h2>Chân trái</h2>
+    <label for="chan_trai_1">Chan trái 1:</label>
+    <input type="text" id="chan_trai_1" name="chan_trai_1"><br>
+    <label for="chan_trai_2">Chan trái 2:</label>
+    <input type="text" id="chan_trai_2" name="chan_trai_2"><br>
+    <label for="chan_trai_3">Chan trái 3:</label>
+    <input type="text" id="chan_trai_3" name="chan_trai_3"><br>
+    <label for="chan_trai_4">Chan trái 4:</label>
+    <input type="text" id="chan_trai_4" name="chan_trai_4"><br>
+    <label for="chan_trai_5">Chan trái 5:</label>
+    <input type="text" id="chan_trai_5" name="chan_trai_5"><br>
+    <label for="chan_trai_6">Chan trái 6:</label>
+    <input type="text" id="chan_trai_6" name="chan_trai_6"><br>
+
+    <h2>Chân phải</h2>
+    <label for="chan_phai_1">Chan phải 1:</label>
+    <input type="text" id="chan_phai_1" name="chan_phai_1"><br>
+    <label for="chan_phai_2">Chan phải 2:</label>
+    <input type="text" id="chan_phai_2" name="chan_phai_2"><br>
+    <label for="chan_phai_3">Chan phải 3:</label>
+    <input type="text" id="chan_phai_3" name="chan_phai_3"><br>
+    <label for="chan_phai_4">Chan phải 4:</label>
+    <input type="text" id="chan_phai_4" name="chan_phai_4"><br>
+    <label for="chan_phai_5">Chan phải 5:</label>
+    <input type="text" id="chan_phai_5" name="chan_phai_5"><br>
+    <label for="chan_phai_6">Chan phải 6:</label>
+    <input type="text" id="chan_phai_6" name="chan_phai_6"><br>
+
+
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <div id="result">
+    <!-- Kết quả tính toán sẽ được hiển thị ở đây -->
+  </div>
+
+  <canvas id="chart"></canvas>
+
+  <script>
+    document.getElementById("fingerForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // Lấy các giá trị nhập vào từ form
+      const tay_trai_1 = parseFloat(document.getElementById("tay_trai_1").value);
+      const tay_trai_2 = parseFloat(document.getElementById("tay_trai_2").value);
+      const tay_trai_3 = parseFloat(document.getElementById("tay_trai_3").value);
+      const tay_trai_4 = parseFloat(document.getElementById("tay_trai_4").value);
+      const tay_trai_5 = parseFloat(document.getElementById("tay_trai_5").value);
+      const tay_trai_6 = parseFloat(document.getElementById("tay_trai_6").value);
+
+      const tay_phai_1 = parseFloat(document.getElementById("tay_phai_1").value);
+      const tay_phai_2 = parseFloat(document.getElementById("tay_phai_2").value);
+      const tay_phai_3 = parseFloat(document.getElementById("tay_phai_3").value);
+      const tay_phai_4 = parseFloat(document.getElementById("tay_phai_4").value);
+      const tay_phai_5 = parseFloat(document.getElementById("tay_phai_5").value);
+      const tay_phai_6 = parseFloat(document.getElementById("tay_phai_6").value);
+      const chan_trai_1 = parseFloat(document.getElementById("chan_trai_1").value);
+      const chan_trai_2 = parseFloat(document.getElementById("chan_trai_2").value);
+      const chan_trai_3 = parseFloat(document.getElementById("chan_trai_3").value);
+      const chan_trai_4 = parseFloat(document.getElementById("chan_trai_4").value);
+      const chan_trai_5 = parseFloat(document.getElementById("chan_trai_5").value);
+      const chan_trai_6 = parseFloat(document.getElementById("chan_trai_6").value);
+
+      const chan_phai_1 = parseFloat(document.getElementById("chan_phai_1").value);
+      const chan_phai_2 = parseFloat(document.getElementById("chan_phai_2").value);
+      const chan_phai_3 = parseFloat(document.getElementById("chan_phai_3").value);
+      const chan_phai_4 = parseFloat(document.getElementById("chan_phai_4").value);
+      const chan_phai_5 = parseFloat(document.getElementById("chan_phai_5").value);
+      const chan_phai_6 = parseFloat(document.getElementById("chan_phai_6").value);
+
+      // Tính toán các giá trị yêu cầu
+      const max_finger = Math.max(
+        tay_trai_1, tay_trai_2, tay_trai_3, tay_trai_4, tay_trai_5, tay_trai_6,
+        tay_phai_1, tay_phai_2, tay_phai_3, tay_phai_4, tay_phai_5, tay_phai_6
+      );
+
+      const min_finger = Math.min(
+        tay_trai_1, tay_trai_2, tay_trai_3, tay_trai_4, tay_trai_5, tay_trai_6,
+        tay_phai_1, tay_phai_2, tay_phai_3, tay_phai_4, tay_phai_5, tay_phai_6
+      );
+
+      const dental_finger = max_finger - min_finger;
+      const average_minmax_finger = (max_finger + min_finger) / 2;
+      const average_dental_finger = dental_finger / 6;
+      const finger_1 = average_minmax_finger + average_dental_finger;
+      const finger_2 = average_minmax_finger - average_dental_finger;
+
+      const average_finger_1 = (tay_trai_1 + tay_phai_1) / 2;
+      const average_finger_2 = (tay_trai_2 + tay_phai_2) / 2;
+      const average_finger_3 = (tay_trai_3 + tay_phai_3) / 2;
+      const average_finger_4 = (tay_trai_4 + tay_phai_4) / 2;
+      const average_finger_5 = (tay_trai_5 + tay_phai_5) / 2;
+      const average_finger_6 = (tay_trai_6 + tay_phai_6) / 2;
+
+      const Detal_avarge_finger_1 = average_finger_1 - average_minmax_finger;
+      const Detal_avarge_finger_2 = average_finger_2 - average_minmax_finger;
+      const Detal_avarge_finger_3 = average_finger_3 - average_minmax_finger;
+      const Detal_avarge_finger_4 = average_finger_4 - average_minmax_finger;
+      const Detal_avarge_finger_5 = average_finger_5 - average_minmax_finger;
+      const Detal_avarge_finger_6 = average_finger_6 - average_minmax_finger;
+
+      const Percent_finger_1 = (Detal_avarge_finger_1 / average_dental_finger) * 100;
+      const Percent_finger_2 = (Detal_avarge_finger_2 / average_dental_finger) * 100;
+      const Percent_finger_3 = (Detal_avarge_finger_3 / average_dental_finger) * 100;
+      const Percent_finger_4 = (Detal_avarge_finger_4 / average_dental_finger) * 100;
+      const Percent_finger_5 = (Detal_avarge_finger_5 / average_dental_finger) * 100;
+      const Percent_finger_6 = (Detal_avarge_finger_6 / average_dental_finger) * 100;
+      // Tính toán các giá trị yêu cầu
+      const max_toe = Math.max(
+        chan_trai_1, chan_trai_2, chan_trai_3, chan_trai_4, chan_trai_5, chan_trai_6,
+        chan_phai_1, chan_phai_2, chan_phai_3, chan_phai_4, chan_phai_5, chan_phai_6
+      );
+
+      const min_toe = Math.min(
+        chan_trai_1, chan_trai_2, chan_trai_3, chan_trai_4, chan_trai_5, chan_trai_6,
+        chan_phai_1, chan_phai_2, chan_phai_3, chan_phai_4, chan_phai_5, chan_phai_6
+      );
+
+      const dental_toe = max_toe - min_toe;
+      const average_minmax_toe = (max_toe + min_toe) / 2;
+      const average_dental_toe = dental_toe / 6;
+      const toe_1 = average_minmax_toe + average_dental_toe;
+      const toe_2 = average_minmax_toe - average_dental_toe;
+
+      const average_toe_1 = (chan_trai_1 + chan_phai_1) / 2;
+      const average_toe_2 = (chan_trai_2 + chan_phai_2) / 2;
+      const average_toe_3 = (chan_trai_3 + chan_phai_3) / 2;
+      const average_toe_4 = (chan_trai_4 + chan_phai_4) / 2;
+      const average_toe_5 = (chan_trai_5 + chan_phai_5) / 2;
+      const average_toe_6 = (chan_trai_6 + chan_phai_6) / 2;
+
+      const Detal_avarge_toe_1 = average_toe_1 - average_minmax_toe;
+      const Detal_avarge_toe_2 = average_toe_2 - average_minmax_toe;
+      const Detal_avarge_toe_3 = average_toe_3 - average_minmax_toe;
+      const Detal_avarge_toe_4 = average_toe_4 - average_minmax_toe;
+      const Detal_avarge_toe_5 = average_toe_5 - average_minmax_toe;
+      const Detal_avarge_toe_6 = average_toe_6 - average_minmax_toe;
+
+      const Percent_toe_1 = (Detal_avarge_toe_1 / average_dental_toe) * 100;
+      const Percent_toe_2 = (Detal_avarge_toe_2 / average_dental_toe) * 100;
+      const Percent_toe_3 = (Detal_avarge_toe_3 / average_dental_toe) * 100;
+      const Percent_toe_4 = (Detal_avarge_toe_4 / average_dental_toe) * 100;
+      const Percent_toe_5 = (Detal_avarge_toe_5 / average_dental_toe) * 100;
+      const Percent_toe_6 = (Detal_avarge_toe_6 / average_dental_toe) * 100;
+
+
+// Tạo mảng chứa giá trị Percent_finger và Percent_toe
+const data = [Percent_finger_1, Percent_finger_2, Percent_finger_3, Percent_finger_4, Percent_finger_5, Percent_finger_6, Percent_toe_1, Percent_toe_2, Percent_toe_3, Percent_toe_4, Percent_toe_5, Percent_toe_6];
+
+// Tạo mảng chứa các màu sắc tương ứng với từng giá trị Percent_finger và Percent_toe
+const colors = data.map(value => {
+  if (Math.abs(value) >= 300) {
+    return '#ff0000'; // Đỏ tối
+  } else if (Math.abs(value) >= 100) {
+    return '#ff9900'; // Vàng tối
+  } else {
+    return '#4a86e8'; // Xanh dương tối
+  }
+});
+
+// Tạo biểu đồ bằng thư viện Chart.js
+const chartCanvas = document.getElementById('chart').getContext('2d');
+const chart = new Chart(chartCanvas, {
+  type: 'bar',
+  data: {
+    labels: ['Finger 1', 'Finger 2', 'Finger 3', 'Finger 4', 'Finger 5', 'Finger 6', 'Toe 1', 'Toe 2', 'Toe 3', 'Toe 4', 'Toe 5', 'Toe 6'],
+    datasets: [{
+      label: 'Percent',
+      data: data,
+      backgroundColor: colors
+    }]
+  },
+  options: {
+    plugins: {
+      title: {
+        display: true,
+        text: 'Biểu đồ phần trăm',
+        font: {
+          size: 16,
+          weight: 'bold'
+        }
+      },
+      legend: {
+        display: true,
+        labels: {
+          generateLabels: function(chart) {
+            const legendColors = ['blue', 'yellow', 'red'];
+            const legendLabels = ['Không bệnh', 'Bệnh nhẹ', 'Bệnh nặng'];
+            const dataset = chart.data.datasets[0];
+            const legendItems = [];
+            for (let i = 0; i < legendColors.length; i++) {
+              legendItems.push({
+                text: legendLabels[i],
+                fillStyle: legendColors[i],
+                strokeStyle: legendColors[i],
+                lineWidth: 1,
+                hidden: false,
+                index: i
+              });
+            }
+            return legendItems;
+          }
+        }
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: {
+          callback: function(value) {
+            return value + '%';
+          }
+        }
+      }
+    },
+    responsive: true,
+    interaction: {
+      mode: 'index',
+      intersect: false,
+    },
+    tooltips: {
+      callbacks: {
+        label: function(context) {
+          let label = context.dataset.label[context.dataIndex] || '';
+          if (label) {
+            label += ': ';
+          }
+          label += context.parsed.y + '%';
+          return label;
+        }
+      }
+    }
+  }
+});
+
+    });
+
+
+  </script>
+</body>
+</html>
