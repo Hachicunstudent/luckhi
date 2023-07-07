@@ -1,6 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* CSS */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+     label {
+    font-size: 20px; /* Cỡ chữ cho label là 18px */
+       margin-bottom: 10px; /* Khoảng cách dưới label */
+  }
+
+    form {
+      max-width: 200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    input[type="text"],
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 20px; /* Cỡ chữ cho trường input là 20px */
+
+    }
+
+    #result {
+      display: none;
+      margin-top: 20px;
+    }
+
+   
+
+    @media only screen and (max-width: 600px) {
+      /* CSS cho điện thoại di động */
+      form {
+        padding: 10px;
+      }
+    }
+  </style>
+  
   <title>Web App</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
