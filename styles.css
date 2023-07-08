@@ -1,0 +1,101 @@
+/* Thiết lập font chữ và kích thước chung */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center; /* Căn giữa nội dung trong body */
+}
+
+/* Tùy chỉnh header */
+h1 {
+  margin-top: 50px; /* Khoảng cách từ đỉnh trang */
+}
+
+/* Tùy chỉnh form */
+form {
+  margin: 0 auto; /* Căn giữa form */
+  max-width: 400px; /* Giới hạn chiều rộng của form */
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  text-align: left; /* Căn trái tiêu đề label */
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+textarea {
+  height: 100px;
+}
+
+/* Tùy chỉnh button */
+button {
+  display: block;
+  width: 100%;
+  padding: 10px 20px; /* Tăng kích thước nút */
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px; /* Khoảng cách với các phần tử phía dưới */
+}
+
+/* Tùy chỉnh nút "Submit" */
+input[type="submit"] {
+  display: block;
+  width: 100%; /* Điều chỉnh kích thước nút */
+  margin: 0 auto; /* Căn giữa nút */
+  padding: 10px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+/* Tùy chỉnh biểu đồ */
+canvas {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+/* Tùy chỉnh kết quả */
+#result {
+  margin-bottom: 20px;
+}
+
+/* Tùy chỉnh footer */
+footer {
+  text-align: center;
+  font-size: 12px;
+}
+
+/* Tùy chỉnh responsive */
+@media (max-width: 600px) {
+  /* Tùy chỉnh form trên thiết bị di động */
+  form {
+    padding: 10px;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  textarea {
+    margin-bottom: 5px;
+  }
+}
