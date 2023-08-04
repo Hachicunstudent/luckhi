@@ -65,13 +65,13 @@ console.log('Triệu chứng:', patientSymptoms);
   // Tạo mảng chứa giá trị Percent_finger và Percent_toe
   var data = [];
   for (var i = 0; i < 6; i++) {
-    const Detal_avarge_finger = values[i] - average_minmax_finger;
+    const Detal_avarge_finger = (values[i]+values[i+6])/2 - average_minmax_finger;
     const Percent_finger = (Detal_avarge_finger / average_dental_finger) * 100;
     data.push(Percent_finger);
   }
 
   for (var i = 12; i < 18; i++) {
-    const Detal_avarge_toe = values[i] - average_minmax_toe;
+    const Detal_avarge_toe = (values[i]+values[i+6])/2 - average_minmax_toe;
     const Percent_toe = (Detal_avarge_toe / average_dental_toe) * 100;
     data.push(Percent_toe);
   }
@@ -79,7 +79,7 @@ console.log('Triệu chứng:', patientSymptoms);
 
 // Tạo mảng chứa các màu sắc tương ứng với từng giá trị Percent_finger và Percent_toe
 const colors = data.map(value => {
-  if (Math.abs(value) >= 300) {
+  if (Math.abs(value) >= 200) {
     return 'red'; // Đỏ tối
   } else if (Math.abs(value) >= 100) {
     return 'orange'; // Vàng tối
