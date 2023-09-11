@@ -1,0 +1,312 @@
+[
+    {
+        "sectionId": "duonghukhihu",
+        "sectionTitle": "Dương hư khí hư",
+        "questions": [
+            {
+                "name": "duonghukhihu1",
+                "text": "Người lạnh, chịu lạnh kém từ lâu"
+            },
+            {
+                "name": "duonghukhihu2",
+                "text": "Chân hoặc tay lạnh."
+            },
+            {
+                "name": "duonghukhihu3",
+                "text": "Ra mồ hôi tay hoặc chân"
+            },
+            {
+                "name": "duonghukhihu4",
+                "text": "Dễ ra mồ hôi đầu vai gáy"
+            },
+            {
+                "name": "duonghukhihu5",
+                "text": "Thường xuyên bị đau vai gáy"
+            },
+            {
+                "name": "duonghukhihu6",
+                "text": "Đi ngoài phân lỏng"
+            }
+        ]
+    },
+    {
+        "sectionId": "huyethu",
+        "sectionTitle": "Huyết hư",
+        "questions": [
+            {
+                "name": "huyethu1",
+                "text": "Hoa mắt chóng mặt đặc biệt lúc đứng lên ngồi xuống"
+            },
+            {
+                "name": "huyethu2",
+                "text": "Môi mặt nhợt nhạt"
+            },
+            {
+                "name": "huyethu3",
+                "text": "Kinh nguyệt ra ít máu"
+            }
+        ]
+    },
+    {
+        "sectionId": "amhu",
+        "sectionTitle": "Âm hư",
+        "questions": [
+            {
+                "name": "amhu1",
+                "text": "Người nóng"
+            },
+            {
+                "name": "amhu2",
+                "text": "Chịu nóng kém, chịu lạnh giỏi"
+            },
+            {
+                "name": "amhu3",
+                "text": "Lòng bàn chân, bàn tay nóng"
+            },
+            {
+                "name": "amhu4",
+                "text": "Đổ mồ hôi về đêm"
+            },
+            {
+                "name": "amhu5",
+                "text": "Táo bón"
+            }
+        ]
+    },
+    {
+        "sectionId": "khinhiet",
+        "sectionTitle": "Khí nhiệt",
+        "questions": [
+            {
+                "name": "khinhiet1",
+                "text": "Người nóng, đầu mặt nóng"
+            },
+            {
+                "name": "khinhiet2",
+                "text": "Mặt đỏ mắt đỏ"
+            },
+            {
+                "name": "khinhiet3",
+                "text": "Mất ngủ"
+            },
+            {
+                "name": "khinhiet4",
+                "text": "Dễ giận dữ, mất kiểm soát"
+            },
+            {
+                "name": "khinhiet5",
+                "text": "Đắng miệng"
+            },
+            {
+                "name": "khinhiet6",
+                "text": "Khát nước"
+            },
+            {
+                "name": "khinhiet7",
+                "text": "Táo bón"
+            },
+            {
+                "name": "khinhiet8",
+                "text": "Nước tiểu sẫm màu hoặc đỏ"
+            }
+        ]
+    },
+    {
+        "sectionId": "khiuat",
+        "sectionTitle": "Khí uất",
+        "questions": [
+            {
+                "name": "khiuat1",
+                "text": "Ngực sườn đầy tức"
+            },
+            {
+                "name": "khiuat2",
+                "text": "Tinh thần uất ức không giải tỏa"
+            },
+            {
+                "name": "khiuat3",
+                "text": "Phân lỏn nhỏn phân dê"
+            },
+            {
+                "name": "khiuat4",
+                "text": "Nuốt khó, nuốt vướng"
+            },
+            {
+                "name": "khiuat5",
+                "text": "Đau ngực, đau bụng trước kì kinh nguyêt"
+            }
+        ]
+    },
+    {
+        "sectionId": "khihaham",
+        "sectionTitle": "Khí hạ hãm",
+        "questions": [
+            {
+                "name": "khihaham1",
+                "text": "Trĩ"
+            },
+            {
+                "name": "khihaham2",
+                "text": "Sa tử cung"
+            }
+        ]
+    },
+    {
+        "sectionId": "machtacnghen",
+        "sectionTitle": "Mạch tắc nghẽn",
+        "questions": [
+            {
+                "name": "machtacnghen1",
+                "text": "Môi tím"
+            },
+            {
+                "name": "machtacnghen2",
+                "text": "Móng tay, móng chân tím"
+            }
+        ]
+    },
+    {
+        "sectionId": "domchung",
+        "sectionTitle": "Đờm chứng",
+        "questions": [
+            {
+                "name": "domchung1",
+                "text": "Người béo"
+            },
+            {
+                "name": "domchung2",
+                "text": "Mỡ máu hoặc gan nhiễm mỡ"
+            },
+            {
+                "name": "domchung3",
+                "text": "Ho khạc đờm"
+            }
+        ]
+    },
+    {
+        "sectionId": "nhietta",
+        "sectionTitle": "Nhiệt tà",
+        "questions": [
+            {
+                "name": "nhietta1",
+                "text": "Sốt"
+            },
+            {
+                "name": "nhietta2",
+                "text": "Miệng khô, khát nước"
+            },
+            {
+                "name": "nhietta3",
+                "text": "Đắng miệng"
+            },
+            {
+                "name": "nhietta4",
+                "text": "Tiểu sẫm màu"
+            },
+            {
+                "name": "nhietta5",
+                "text": "Táo bón"
+            }
+        ]
+    },
+    {
+        "sectionId": "thapta",
+        "sectionTitle": "Thấp tà",
+        "questions": [
+            {
+                "name": "thapta1",
+                "text": "Người nặng nề"
+            },
+            {
+                "name": "thapta2",
+                "text": "Đau đầu như bó"
+            },
+            {
+                "name": "thapta3",
+                "text": "Lợm miệng"
+            },
+            {
+                "name": "thapta4",
+                "text": "Khí hư âm đạo"
+            },
+            {
+                "name": "thapta5",
+                "text": "Đi ngoài phân lỏng"
+            }
+        ]
+    },
+    {
+        "sectionId": "hanta",
+        "sectionTitle": "Hàn tà",
+        "questions": [
+            {
+                "name": "hanta1",
+                "text": "Người lạnh, sợ gió sợ lạnh (mới bị gần đây)"
+            },
+            {
+                "name": "hanta2",
+                "text": "Hiện đang đau vai gáy"
+            },
+            {
+                "name": "hanta3",
+                "text": "Nhức mỏi toàn thân"
+            },
+            {
+                "name": "hanta4",
+                "text": "Chân tay lạnh( mới bị gần đây)"
+            }
+        ]
+    },
+    {
+        "sectionId": "khidong",
+        "sectionTitle": "Khí động",
+        "questions": [
+            {
+                "name": "khidong1",
+                "text": "Run"
+            },
+            {
+                "name": "khidong2",
+                "text": "Giật"
+            },
+            {
+                "name": "khidong3",
+                "text": "Tê, cảm giác rân rân, kiến bò"
+            },
+            {
+                "name": "khidong4",
+                "text": "Chóng mặt"
+            },
+            {
+                "name": "khidong5",
+                "text": "Co giật, động kinh"
+            },
+            {
+                "name": "khidong6",
+                "text": "Liệt"
+            }
+        ]
+    },
+    {
+        "sectionId": "khivuong",
+        "sectionTitle": "Khí vượng",
+        "questions": [
+            {
+                "name": "khivuong1",
+                "text": "Đau đầu thái dương hoặc vùng mắt cảm giác căng tức"
+            },
+            {
+                "name": "khivuong2",
+                "text": "Ù tai, nghe kém"
+            },
+            {
+                "name": "khivuong3",
+                "text": "Mất ngủ, hay mơ"
+            },
+            {
+                "name": "khivuong4",
+                "text": "Hay cáu gắt"
+            }
+        ]
+    }
+]
