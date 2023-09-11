@@ -45,7 +45,7 @@
         finalJSONarray = benhNhanData[index];
         finalJSON = JSON.stringify(finalJSONarray);
         localStorage.setItem("finalJSON", finalJSON);
-        window.location = 'vanchan2/page9.html'
+        window.location = 'page9.html'
     });
 }
             }
