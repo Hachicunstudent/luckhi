@@ -6,7 +6,7 @@ body {
 
 label {
     display: block; /* Đảm bảo label nằm trên cùng một dòng với input */
-    margin-bottom: 5px; /* Khoảng cách giữa các label */
+    margin-bottom: 20px; /* Khoảng cách giữa các label */
 }
 
 input[type="text"],
