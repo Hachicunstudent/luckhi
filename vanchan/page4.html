@@ -2,9 +2,37 @@
 <html>
 <head>
     <title> Bệnh án bệnh nhân- Tiền sử</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ sơ bệnh án Lục Khí- Bệnh sử</title>
+    <!-- Thêm thư viện Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Tùy chỉnh kiểu CSS cho trang web của bạn */
+        body {
+            font-size: 18px; /* Font chữ to */
+            padding: 20px; /* Khoảng cách giữa nội dung và biên */
+        }
+
+        
+
+        /* Tùy chỉnh màu sắc và đường link */
+        .form-group {
+            margin-bottom: 20px; /* Khoảng cách giữa các trường nhập liệu */
+        }
+
+        /* Thêm phản ánh cho thiết bị di động */
+        @media (max-width: 576px) {
+            .form-control {
+                font-size: 16px; /* Font chữ to hơn cho thiết bị di động */
+            }
+        }
+    </style>
+    
 </head>
 <body>
     <a href="index.html">Trở về trang chủ</a>
+    <div class="container">
 
     <h1>Hồ sơ bệnh án Lục Khí</h1>
     <h2>3. Tiền sử</h2>
@@ -13,35 +41,38 @@
             <label for="benhVaTrieuChung">1. Liệt kê tất cả các bệnh và các triệu chứng đang mắc phải (Chỉ cần liệt kê tên):</label>
         </p>
         <p>
-            <textarea id="benhVaTrieuChung" name="benhVaTrieuChung" rows="4" cols="50"></textarea>
+            <textarea id="benhVaTrieuChung" name="benhVaTrieuChung" rows="4" ></textarea>
         </p>
     
         <p>
             <label for="thuocVaThucPham">2. Liệt kê các thuốc (cả tây y hoặc đông y), thực phẩm chức năng hoặc các loại cây cỏ đang sử dụng:</label>
         </p>
         <p>
-            <textarea id="thuocVaThucPham" name="thuocVaThucPham" rows="4" cols="50"></textarea>
+            <textarea id="thuocVaThucPham" name="thuocVaThucPham" rows="4" ></textarea>
         </p>
     
         <p>
             <label for="cheDoAn">3. Chế độ ăn đang thực hiện (ví dụ: ăn chay, ăn kiêng, thải độc):</label>
         </p>
         <p>
-            <textarea id="cheDoAn" name="cheDoAn" rows="4" cols="50"></textarea>
+            <textarea id="cheDoAn" name="cheDoAn" rows="4" ></textarea>
         </p>
     
         <p>
             <label for="cheDoSinhHoat">4. Chế độ sinh hoạt đặc biệt (ví dụ: thường xuyên phải thức đêm):</label>
         </p>
         <p>
-            <textarea id="cheDoSinhHoat" name="cheDoSinhHoat" rows="4" cols="50"></textarea>
+            <textarea id="cheDoSinhHoat" name="cheDoSinhHoat" rows="4" ></textarea>
         </p>
     
         <!-- Nút "Tiếp" để chuyển sang trang 5 -->
         <input type="button" value="Tiếp" onclick="chuyenSangTrang5()">
     </form>
-    
+</div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         // Chuyển đến trang 5
         function chuyenSangTrang5() {
