@@ -1,59 +1,86 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Hồ sơ bệnh án Lục Khí</title>
-    <style>
-        /* CSS để tạo kiểu cho mục danh sách bệnh nhân */
-        .patient-list-item {
-            color: blue;
-            cursor: pointer;
-            text-decoration: underline;
-        }
-
-        .patient-list-item:hover {
-            text-decoration: none;
-        }
-    </style>
-</head>
-<body>
-    <h1>Hồ sơ bệnh án Lục Khí</h1>
-    <h2>Phần 1. Hành chính</h2>
-    <form>
-        <label for="hoTen">1. Họ tên bệnh nhân:</label>
-        <input type="text" id="hoTen" name="hoTen" ><br><br>
+ <head>
+        <title>Hồ sơ bệnh án Lục Khí</title>
+        <!-- Thêm thư viện Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+            /* Tùy chỉnh kiểu CSS cho trang web của bạn */
+            body {
+                font-size: 18px; /* Font chữ to */
+                padding: 20px; /* Khoảng cách giữa nội dung và biên */
+            }
     
-        <label for="tuoi">2. Tuổi:</label>
-        <input type="text" id="tuoi" name="tuoi" ><br><br>
+           
     
-        <label for="gioiTinh">3. Giới tính:</label>
-        <input type="radio" id="nam" name="gioiTinh" value="Nam" >
-        <label for="nam">Nam</label>
-        <input type="radio" id="nu" name="gioiTinh" value="Nữ" >
-        <label for="nu">Nữ</label><br><br>
+            /* Tùy chỉnh màu sắc và đường link */
+            .patient-list-item {
+                color: blue;
+                cursor: pointer;
+                text-decoration: underline;
+            }
     
-        <label for="ngheNghiep">4. Nghề nghiệp:</label>
-        <input type="text" id="ngheNghiep" name="ngheNghiep" ><br><br>
+            .patient-list-item:hover {
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Hồ sơ bệnh án Lục Khí</h1>
+            <h2>Phần 1. Hành chính</h2>
+            <form>
+                <!-- Thêm lớp Bootstrap cho các thành phần -->
+                <div class="form-group">
+                    <label for="hoTen">1. Họ tên bệnh nhân:</label>
+                    <input type="text" class="form-control" id="hoTen" name="hoTen">
+                </div>
+                <div class="form-group">
+                    <label for="tuoi">2. Tuổi:</label>
+                    <input type="text" class="form-control" id="tuoi" name="tuoi">
+                </div>
+                <div class="form-group">
+                    <label>3. Giới tính:</label>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="nam" name="gioiTinh" value="Nam">
+                        <label class="form-check-label" for="nam">Nam</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="nu" name="gioiTinh" value="Nữ">
+                        <label class="form-check-label" for="nu">Nữ</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="ngheNghiep">4. Nghề nghiệp:</label>
+                    <input type="text" class="form-control" id="ngheNghiep" name="ngheNghiep">
+                </div>
+                <div class="form-group">
+                    <label for="soDienThoai">5. Số điện thoại:</label>
+                    <input type="text" class="form-control" id="soDienThoai" name="soDienThoai">
+                </div>
+                <button type="button" class="btn btn-primary" onclick="luuThongTin()">Tiếp tục</button>
+            </form>
+            <h3>Danh sách bệnh nhân</h3>
+            <ul id="patientList" class="list-group"></ul>
+            <h2><b>Giúp đỡ phát triển phần mềm:</b></h2>
+            <p><u>Học viên Lục Khí được sử dụng phần mềm Vấn Chẩn miễn phí.</u></p>
+            <p>Giúp đỡ bác sĩ Vũ Đức Đại để duy trì trang web (bao gồm chi phí tên miền và hosting) cũng như có thể nâng cấp và tạo ra nhiều sản phẩm có ích cho cộng đồng. Bằng cách: </p>  
+            <p><b>Chuyển khoản theo thông tin sau:</b></p>
+             <p>Techcombank</p> 
+             <p>Số tài khoản: 19034579180016</p> 
+             <p>Chủ tài khoản: Vũ Đức Đại</p> 
+             <p> Nội dung chuyển khoản: Ủng hộ phần mềm vấn chẩn</p>
+             <p>Hoặc quét mã QR để chuyển khoản 
+    </p>
     
-        <label for="soDienThoai">5. Số điện thoại:</label>
-        <input type="text" id="soDienThoai" name="soDienThoai" ><br><br>
+    <img src="QR.jpg" alt="QR code" width="400" height="400">
+            <!-- Các phần còn lại của trang web -->
+        </div>
     
-        <input type="button" value="Tiếp tục" onclick="luuThongTin()">
-        <h3>Danh sách bệnh nhân</h3>
-        <div id="patientList"></div>
-        <h2><b>Giúp đỡ phát triển phần mềm:</b></h2>
-        
-        <p><u>Học viên Lục Khí được sử dụng phần mềm Vấn Chẩn miễn phí.</u></p>
-        <p>Giúp đỡ bác sĩ Vũ Đức Đại để duy trì trang web (bao gồm chi phí tên miền và hosting) cũng như có thể nâng cấp và tạo ra nhiều sản phẩm có ích cho cộng đồng. Bằng cách: </p>  
-        <p><b>Chuyển khoản theo thông tin sau:</b></p>
-         <p>Techcombank</p> 
-         <p>Số tài khoản: 19034579180016</p> 
-         <p>Chủ tài khoản: Vũ Đức Đại</p> 
-         <p> Nội dung chuyển khoản: Ủng hộ phần mềm vấn chẩn</p>
-         <p>Hoặc quét mã QR để chuyển khoản 
-</p>
-
-<img src="QR.jpg" alt="QR code" width="400" height="400">
-    </form>
+        <!-- Thêm thư viện Bootstrap JavaScript (jQuery và Popper.js cần thiết) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     
     <script src="page1.js"></script>
 
