@@ -73,7 +73,8 @@ function createQuestionnaire(sectionId, sectionTitle, questions) {
         // Đặt checkbox vào đầu label
         label.insertBefore(checkbox, label.firstChild);
 
-                
+                // Thêm lớp CSS để tạo khoảng cách
+        label.classList.add("checkbox-label");
 
     
         section.appendChild(label);
