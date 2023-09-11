@@ -10,14 +10,17 @@ label {
 }
 
 input[type="text"],
-input[type="radio"] {
-    width: 100%; /* Đảm bảo các input có chiều rộng tối đa */
-    padding: 5px; /* Tạo khoảng cách bên trong input */
-    margin-bottom: 10px; /* Khoảng cách giữa các input */
+ {
+     width: 100%; /* Đảm bảo các input có chiều rộng tối đa */
+    padding: 10px; /* Tăng khoảng cách bên trong input */
+    margin-bottom: 15px; /* Tăng khoảng cách giữa các input */
+    font-size: 16px; /* Tăng kích thước chữ trong input */
 }
 
 input[type="button"] {
-    width: auto; /* Đặt lại chiều rộng mặc định cho nút */
+    width: 100%; /* Giảm độ rộng của nút */
+    padding: 10px; /* Tăng khoảng cách bên trong nút */
+    margin-top: 15px; /* Tăng khoảng cách từ nút đến các trường nhập liệu */
 }
 
 /* Kích thước và bố trí danh sách bệnh nhân */
@@ -43,4 +46,10 @@ h2 {
 
 p {
     margin-bottom: 10px;
+}
+/* Định dạng cho form box */
+.form-container {
+    width: 50%; /* Giảm độ dài của form box xuống 50% chiều rộng màn hình */
+   
+    padding: 20px; /* Tăng khoảng cách từ biên nội dung đến các trường nhập liệu */
 }
