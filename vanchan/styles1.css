@@ -11,7 +11,7 @@ label {
 
 input[type="text"],
  {
-     width: 100%; /* Đảm bảo các input có chiều rộng tối đa */
+     width: 200%; /* Đảm bảo các input có chiều rộng tối đa */
     padding: 15px; /* Tăng khoảng cách bên trong input */
     margin-bottom: 30px; /* Tăng khoảng cách giữa các input */
     font-size: 18px; /* Tăng kích thước chữ trong input */
