@@ -1,6 +1,6 @@
 /* CSS để cải thiện trang web trên điện thoại di động */
 body {
-    font-size: 16px; /* Đảm bảo font chữ chính có kích thước hợp lý */
+    font-size: 18px; /* Đảm bảo font chữ chính có kích thước hợp lý */
     margin: 10px; /* Tạo khoảng cách xung quanh nội dung trang */
 }
 
@@ -12,9 +12,9 @@ label {
 input[type="text"],
  {
      width: 100%; /* Đảm bảo các input có chiều rộng tối đa */
-    padding: 10px; /* Tăng khoảng cách bên trong input */
-    margin-bottom: 15px; /* Tăng khoảng cách giữa các input */
-    font-size: 16px; /* Tăng kích thước chữ trong input */
+    padding: 15px; /* Tăng khoảng cách bên trong input */
+    margin-bottom: 30px; /* Tăng khoảng cách giữa các input */
+    font-size: 18px; /* Tăng kích thước chữ trong input */
 }
 
 input[type="button"] {
