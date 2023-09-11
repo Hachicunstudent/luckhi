@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hồ sơ bệnh án Lục Khí</title>
+    <style>
+        /* CSS để tạo kiểu cho mục danh sách bệnh nhân */
+        .patient-list-item {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .patient-list-item:hover {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hồ sơ bệnh án Lục Khí</h1>
+    <h2>Phần 1. Hành chính</h2>
+    <form>
+        <label for="hoTen">1. Họ tên bệnh nhân:</label>
+        <input type="text" id="hoTen" name="hoTen" ><br><br>
+    
+        <label for="tuoi">2. Tuổi:</label>
+        <input type="text" id="tuoi" name="tuoi" ><br><br>
+    
+        <label for="gioiTinh">3. Giới tính:</label>
+        <input type="radio" id="nam" name="gioiTinh" value="Nam" >
+        <label for="nam">Nam</label>
+        <input type="radio" id="nu" name="gioiTinh" value="Nữ" >
+        <label for="nu">Nữ</label><br><br>
+    
+        <label for="ngheNghiep">4. Nghề nghiệp:</label>
+        <input type="text" id="ngheNghiep" name="ngheNghiep" ><br><br>
+    
+        <label for="soDienThoai">5. Số điện thoại:</label>
+        <input type="text" id="soDienThoai" name="soDienThoai" ><br><br>
+    
+        <input type="button" value="Tiếp tục" onclick="luuThongTin()">
+        <h3>Danh sách bệnh nhân</h3>
+        <div id="patientList"></div>
+        <h2><b>Giúp đỡ phát triển phần mềm:</b></h2>
+        
+        <p><u>Học viên Lục Khí được sử dụng phần mềm Vấn Chẩn miễn phí.</u></p>
+        <p>Giúp đỡ bác sĩ Vũ Đức Đại để duy trì trang web (bao gồm chi phí tên miền và hosting) cũng như có thể nâng cấp và tạo ra nhiều sản phẩm có ích cho cộng đồng. Bằng cách: </p>  
+        <p><b>Chuyển khoản theo thông tin sau:</b></p>
+         <p>Techcombank</p> 
+         <p>Số tài khoản: 19034579180016</p> 
+         <p>Chủ tài khoản: Vũ Đức Đại</p> 
+         <p> Nội dung chuyển khoản: Ủng hộ phần mềm vấn chẩn</p>
+         <p>Hoặc quét mã QR để chuyển khoản 
+</p>
+
+<img src="QR.jpg" alt="QR code" width="400" height="400">
+    </form>
+    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var benhNhanData = JSON.parse(localStorage.getItem("benhNhanData")) || [];
+
+            function hienThiDanhSach() {
+                var patientList = document.getElementById("patientList");
+                patientList.innerHTML = '';
+
+                for (var i = 0; i < benhNhanData.length; i++) {
+    var patient = benhNhanData[i];
+    var listItem = document.createElement("li");
+    listItem.textContent = "Họ tên: " + patient.hoTen + ", Tuổi: " + patient.tuoi;
+
+    var deleteButton = document.createElement("button");
+    deleteButton.textContent = "Xóa";
+    deleteButton.dataset.index = i;
+    deleteButton.addEventListener("click", function (event) {
+        event.stopPropagation(); // Ngăn sự kiện click lan toả
+        var index = event.target.dataset.index;
+        benhNhanData.splice(index, 1);
+        localStorage.setItem("benhNhanData", JSON.stringify(benhNhanData));
+        hienThiDanhSach();
+    });
+
+    var undoButton = document.createElement("button");
+    undoButton.textContent = "Hoàn tác";
+    undoButton.dataset.index = i;
+    undoButton.addEventListener("click", function (event) {
+        event.stopPropagation(); // Ngăn sự kiện click lan toả
+        var index = event.target.dataset.index;
+        var patientCopy = JSON.parse(JSON.stringify(benhNhanData[index]));
+        benhNhanData.splice(index + 1, 0, patientCopy);
+        localStorage.setItem("benhNhanData", JSON.stringify(benhNhanData));
+        hienThiDanhSach();
+    });
+
+    listItem.appendChild(deleteButton);
+    listItem.appendChild(undoButton);
+
+    listItem.dataset.index = i;
+    listItem.classList.add("patient-list-item");
+    patientList.appendChild(listItem);
+
+    listItem.addEventListener("click", function (event) {
+        var index = event.target.dataset.index;
+        finalJSONarray = benhNhanData[index];
+        finalJSON = JSON.stringify(finalJSONarray);
+        localStorage.setItem("finalJSON", finalJSON);
+        window.location = 'vanchan2/page9.html'
+    });
+}
+            }
+
+            hienThiDanhSach();
+        });
+
+        function luuThongTin() {
+            var hoTen = document.getElementById("hoTen").value;
+            var tuoi = document.getElementById("tuoi").value;
+            var gioiTinh = document.querySelector('input[name="gioiTinh"]:checked').value;
+            var ngheNghiep = document.getElementById("ngheNghiep").value;
+            var soDienThoai = document.getElementById("soDienThoai").value;
+
+            var benhNhan = {
+                ngayThang: new Date(),
+                hoTen: hoTen,
+                tuoi: tuoi,
+                gioiTinh: gioiTinh,
+                ngheNghiep: ngheNghiep,
+                soDienThoai: soDienThoai
+            };
+
+        
+
+            localStorage.setItem("thongTinPage1", JSON.stringify(benhNhan));
+            console.log(benhNhan);
+            window.location.href = "page2_3.html";
+        }
+    </script>
+</body>
+</html>

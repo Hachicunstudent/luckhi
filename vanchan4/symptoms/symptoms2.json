@@ -1,0 +1,144 @@
+[
+    {
+        "sectionId": "tam",
+        "sectionTitle": "Tâm",
+        "questions": [
+            {
+                "name": "tam1",
+                "text": "Hồi hộp, đánh trống ngực"
+            },
+            {
+                "name": "tam2",
+                "text": "Mất ngủ"
+            },
+            {
+                "name": "tam3",
+                "text": "Tinh thần không ổn, hay lo âu, căng thẳng hoặc rối loạn cảm xúc, không tiết chế được cảm xúc"
+            }
+        ]
+    },
+    {
+        "sectionId": "phe",
+        "sectionTitle": "Phế",
+        "questions": [
+            {
+                "name": "phe1",
+                "text": "Ho"
+            },
+            {
+                "name": "phe2",
+                "text": "Hay hụt hơi"
+            },
+            {
+                "name": "phe3",
+                "text": "Thở dốc, khó thở khi leo cầu thang"
+            },
+            {
+                "name": "phe4",
+                "text": "Nặng ngực, cảm giác thiếu khí"
+            }
+        ]
+    },
+    {
+        "sectionId": "ty",
+        "sectionTitle": "Tỳ",
+        "questions": [
+            {
+                "name": "ty1",
+                "text": "Đầy bụng, chướng bụng sau ăn"
+            },
+            {
+                "name": "ty2",
+                "text": "Ăn khó tiêu hoặc không tiêu"
+            },
+            {
+                "name": "ty3",
+                "text": "Đại tiên phân không khuôn hoặc phân nát"
+            },
+            {
+                "name": "ty4",
+                "text": "Phân có nhầy hoặc máu"
+            },
+            {
+                "name": "ty5",
+                "text": "Chán ăn"
+            },
+            {
+                "name": "ty6",
+                "text": "Người gầy không có cơ bắp"
+            }
+        ]
+    },
+    {
+        "sectionId": "can",
+        "sectionTitle": "Can",
+        "questions": [
+            {
+                "name": "can1",
+                "text": "Hay đau vùng ngực sườn( vùng ngực bên dưới cùng)"
+            },
+            {
+                "name": "can2",
+                "text": "Hay đau đầu thái dương"
+            },
+            {
+                "name": "can3",
+                "text": "Tê tay chân hoặc run tay chân hoặc hay bị chuột rút"
+            },
+            {
+                "name": "can4",
+                "text": "Mất ngủ, hay mơ"
+            },
+            {
+                "name": "can5",
+                "text": "Cuộc sống nhiều chuyện không như ý"
+            },
+            {
+                "name": "can6",
+                "text": "Hay căng thẳng, uất ức, tức giận"
+            },
+            {
+                "name": "can7",
+                "text": "Bệnh về mắt ( nhìn mờ, ruồi muỗi hoặc màng che trong mắt, đau mắt, quáng gà(khó nhìn lúc trời tối) hoặc các bệnh về mặt khác)"
+            },
+            {
+                "name": "can8",
+                "text": "Kinh nguyệt rối loạn như đau bụng kinh trước kì hoặc trong kì, chu kì kinh nguyệt rối loạn( bình thường 30 ngày ra máu  kinh nguyệt 1 lần nếu dài hơn hoặc ngắn hơn 30 ngày nhiều thì rối loạn), rối loạn về lượng máu kinh( ra quá nhiều hoặc quá ít( bình thường  ra máu 5-7 ngày), hoặc máu kinh bất thường( có nhiều máu cục hoặc máu nhầy)."
+            },
+            {
+                "name": "can9",
+                "text": "Móng tay khô dễ gẫy, tách móng, hoặc bất kì bất thường về móng."
+            },
+            {
+                "name": "can10",
+                "text": "Ù tai, nghe kém"
+            }
+        ]
+    },
+    {
+        "sectionId": "than",
+        "sectionTitle": "Thận",
+        "questions": [
+            {
+                "name": "than1",
+                "text": "Rối loạn tiểu tiện( Có bất kì triệu chứng nào trong các triệu chứng tiểu đêm, tiểu nhiều, uống nước vào đi tiểu nhiều, tiểu són, tiểu buốt, tiểu rắt, dòng tiểu yếu)"
+            },
+            {
+                "name": "than2",
+                "text": "Rối loạn chức năng sinh dục( Nam: Xuất tinh sớm, tinh trùng yếu, mộng tinh( xuất tinh lúc ngủ), di tinh( không có kích thích tình dục tự xuất tinh), ham muốn quan hệ quá nhiều hoặc quá ít, Nữ: âm đạo khô, giảm ham muốn, vô kinh, vô sinh)"
+            },
+            {
+                "name": "than3",
+                "text": "Đau thắt lưng, đặck biệt khi ngồi nhiều"
+            },
+            {
+                "name": "than4",
+                "text": "Hay quên, trí nhớ kém"
+            },
+            {
+                "name": "than5",
+                "text": "Ù tai, nghe kém"
+            }
+        ]
+    }
+]
