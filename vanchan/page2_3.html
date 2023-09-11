@@ -1,16 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>Hồ sơ bệnh án Lục Khí- Bệnh sử</title>
-</head>
-<body>
-    <a href="index.html">Trở về trang chủ</a>
-
-    <h1>Hồ sơ bệnh án Lục Khí:Phần 2- Bệnh sử</h1>
-    <p>Liệt kê 2 bệnh hoặc triệu chứng bạn khó chịu nhất và muốn chữa nhất kèm theo thông tin về bệnh sử vào các ô bên dưới</p>
-
-    <h2>Triệu chứng 1:</h2>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hồ sơ bệnh án Lục Khí- Bệnh sử</title>
+        <!-- Thêm thư viện Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+            /* Tùy chỉnh kiểu CSS cho trang web của bạn */
+            body {
+                font-size: 18px; /* Font chữ to */
+                padding: 20px; /* Khoảng cách giữa nội dung và biên */
+            }
+    
+            
+    
+            /* Tùy chỉnh màu sắc và đường link */
+            .form-group {
+                margin-bottom: 20px; /* Khoảng cách giữa các trường nhập liệu */
+            }
+    
+            /* Thêm phản ánh cho thiết bị di động */
+            @media (max-width: 576px) {
+                .form-control {
+                    font-size: 16px; /* Font chữ to hơn cho thiết bị di động */
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <a href="index.html">Trở về trang chủ</a>
+    
+        <div class="container">
+            <h1>Hồ sơ bệnh án Lục Khí: Phần 2 - Bệnh sử</h1>
+            <p>Liệt kê 2 bệnh hoặc triệu chứng bạn khó chịu nhất và muốn chữa nhất kèm theo thông tin về bệnh sử vào các ô bên dưới</p>
+    
+            <h2>Triệu chứng 1:</h2>
     <form id="symptomForm1">
         <!-- Các trường nhập liệu ở đây, giữ nguyên như trước -->
         <p>Câu 1: Triệu chứng hoặc bệnh mà bạn khó chịu nhất và muốn chữa nhất là gì? (ví dụ: đau đầu)</p>
@@ -42,12 +67,13 @@
         <p>Câu 4: Hiện tại triệu chứng hoặc bệnh của bạn ra sao?</p>
         <textarea name="symptom2_current_condition" rows="7" cols="50" ></textarea><br>
     </form>
-
-
-    <!-- Nút "Tiếp" cuối cùng -->
-    <button onclick="saveDataAndProceedToPage4()">Tiếp</button>
-
-    <!-- JavaScript để xử lý nút "Tiếp" -->
+            <button class="btn btn-primary" onclick="saveDataAndProceedToPage4()">Tiếp</button>
+        </div>
+    
+        <!-- Thêm thư viện Bootstrap JavaScript (jQuery và Popper.js cần thiết) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         function saveDataAndProceedToPage4() {
             // Lưu dữ liệu từ biểu mẫu vào biến cục bộ thongTinPage3
