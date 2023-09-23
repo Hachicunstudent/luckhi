@@ -58,121 +58,123 @@ window.onload = function() {
                     foundPatternValues.push(foundPattern); // Lưu giá trị foundPattern vào mảng
                 }
             });
-            alert("Quá trình tính toán đã hoàn thành.");
-
-
-            // Xử lý dữ liệu sau khi bấm nút Tiếp
-            nextButton.addEventListener("click", function() {
-                // Tính điểm 
-                const totalScores = [];
-
-                foundPatternValues.forEach(section => {
-                    const checkboxes = document.querySelectorAll(`#${section.PatternId} input[type='checkbox']`);
-                    
-                    const percentScore = (checkboxes.length > 0) ? (document.querySelectorAll(`#${section.PatternId} input:checked`).length / checkboxes.length) * 100 : 0;
-                    
-                    const totalScore = percentScore;
-
-                    totalScores.push({
-                        sectionId: section.PatternId,
-                        
-                        
-                        totalScore: totalScore.toFixed(0)
-                    });
-
-                    document.getElementById(section.PatternId + "Score").textContent = percentScore.toFixed(0);
-                });
-                
-
-                localStorage.setItem("thongTinPage7", JSON.stringify(totalScores));
-
-                // Trích xuất thông tin từ các biến cục bộ
-                    var thongTinPage1 = JSON.parse(localStorage.getItem("thongTinPage1"));
-                // Chuyển JSON object thành JSON mảng cho Page2_3    
-                    var thongTinPage2_3 = JSON.parse(localStorage.getItem("thongTinPage2_3"));
-                    
-                // Chuyển JSON Object thành JSON mảng cho Page 4    
-                    var thongTinPage4 = JSON.parse(localStorage.getItem("thongTinPage4"));
-
-                    var thongTinPage5 = JSON.parse(localStorage.getItem("thongTinPage5"));
-                    var thongTinPage6 = JSON.parse(localStorage.getItem("thongTinPage6"));
-                    var thongTinPage7 = JSON.parse(localStorage.getItem("thongTinPage7"));
-                    console.log(localStorage.getItem("thongTinPage7"));
-                    //Hien thi thong tin Page 4
-                    
-
-
-                    //Chuyển đổi thông tin Page 5- Chứng trạng chung- JSONmanyTo1
-                    var Page5_convert=JSONmanyTo1(thongTinPage5); 
-                    var Page6_convert=JSONmanyTo1(thongTinPage6);
-
-                    // Lọc chẩn đoán sơ bộ
-
-                    
-                    thongTinPage7.sort((a, b) => parseFloat(b.totalScore) - parseFloat(a.totalScore));
-                    console.log(thongTinPage7);
-
-
-                    
-                    // Tạo thông tin chẩn đoán
-                    var chanDoanIdArray = thongTinPage7.map(function(item) {
-                        return item.sectionId;
-                    });
-                    var chanDoanScoreArray = thongTinPage7.map(function(item) {
-                        return item.totalScore;
-                    });
-                    
-                    var chanDoanIdJSON={chanDoanId: chanDoanIdArray.join(',')};
-                    var chanDoanScoreJSON={chanDoanScore: chanDoanScoreArray};
-                    console.log(JSON.stringify.chanDoanIdJSON);
-
-                    //Ghép nối các file JSON lại
-                    
-                    //var Page7full= JSONmerge(chanDoanIdJSON,chanDoanScoreJSON);
-                   
-                    //Ghép theo cách khác: 
-                    var finalJSONarray= Object.assign({},thongTinPage1,thongTinPage2_3,thongTinPage4,Page5_convert,Page6_convert,chanDoanIdJSON,chanDoanScoreJSON);
-                   var finalJSON= JSON.stringify(finalJSONarray);
-                   console.log(finalJSON);
-
-
-                    localStorage.setItem("finalJSON",finalJSON);
-                // Lưu final JSON vào danh sách bệnh nhân benhNhanData
-                // Kiểm tra xem có dữ liệu benhNhanData trong localStorage hay không
-                var storedJSONString = localStorage.getItem("benhNhanData");
-                var benhNhanData = [];
-
-                if (storedJSONString) {
-                // Nếu có dữ liệu trong localStorage, chuyển đổi thành mảng JavaScript
-                benhNhanData = JSON.parse(storedJSONString);
-                }
-                benhNhanData.unshift(finalJSONarray);
-                // Lưu benhNhanData lại vào localStorage sau khi đã thay đổi
-                localStorage.setItem("benhNhanData", JSON.stringify(benhNhanData));
-                console.log(JSON.stringify(benhNhanData));
-
-
-                 // Gửi dữ liệu JSON đến Google Apps Script thông qua fetch
             
-                 fetch('https://sheetdb.io/api/v1/jw5vd2trd3b6z', {
-                    method: 'POST',
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                    },
-                    body: finalJSON
-                })
-                  .then((response) => response.json())
-                  .then((data) => console.log(data));
 
-                // Chuyen sang cua so moi
-                
-                window.location='page9.html';
-            });
+
+            
         })
         .catch(error => {
             console.error("Lỗi khi đọc file JSON:", error);
         });
+        alert("Quá trình tính toán đã hoàn thành.");
+    // Xử lý dữ liệu sau khi bấm nút Tiếp
+    nextButton.addEventListener("click", function() {
+        // Tính điểm 
+        const totalScores = [];
+
+        foundPatternValues.forEach(section => {
+            const checkboxes = document.querySelectorAll(`#${section.PatternId} input[type='checkbox']`);
+            
+            const percentScore = (checkboxes.length > 0) ? (document.querySelectorAll(`#${section.PatternId} input:checked`).length / checkboxes.length) * 100 : 0;
+            
+            const totalScore = percentScore;
+
+            totalScores.push({
+                sectionId: section.PatternId,
+                
+                
+                totalScore: totalScore.toFixed(0)
+            });
+
+            document.getElementById(section.PatternId + "Score").textContent = percentScore.toFixed(0);
+        });
+        
+
+        localStorage.setItem("thongTinPage7", JSON.stringify(totalScores));
+
+        // Trích xuất thông tin từ các biến cục bộ
+            var thongTinPage1 = JSON.parse(localStorage.getItem("thongTinPage1"));
+        // Chuyển JSON object thành JSON mảng cho Page2_3    
+            var thongTinPage2_3 = JSON.parse(localStorage.getItem("thongTinPage2_3"));
+            
+        // Chuyển JSON Object thành JSON mảng cho Page 4    
+            var thongTinPage4 = JSON.parse(localStorage.getItem("thongTinPage4"));
+
+            var thongTinPage5 = JSON.parse(localStorage.getItem("thongTinPage5"));
+            var thongTinPage6 = JSON.parse(localStorage.getItem("thongTinPage6"));
+            var thongTinPage7 = JSON.parse(localStorage.getItem("thongTinPage7"));
+            console.log(localStorage.getItem("thongTinPage7"));
+            //Hien thi thong tin Page 4
+            
+
+
+            //Chuyển đổi thông tin Page 5- Chứng trạng chung- JSONmanyTo1
+            var Page5_convert=JSONmanyTo1(thongTinPage5); 
+            var Page6_convert=JSONmanyTo1(thongTinPage6);
+
+            // Lọc chẩn đoán sơ bộ
+
+            
+            thongTinPage7.sort((a, b) => parseFloat(b.totalScore) - parseFloat(a.totalScore));
+            console.log(thongTinPage7);
+
+
+            
+            // Tạo thông tin chẩn đoán
+            var chanDoanIdArray = thongTinPage7.map(function(item) {
+                return item.sectionId;
+            });
+            var chanDoanScoreArray = thongTinPage7.map(function(item) {
+                return item.totalScore;
+            });
+            
+            var chanDoanIdJSON={chanDoanId: chanDoanIdArray.join(',')};
+            var chanDoanScoreJSON={chanDoanScore: chanDoanScoreArray};
+            console.log(JSON.stringify.chanDoanIdJSON);
+
+            //Ghép nối các file JSON lại
+            
+            //var Page7full= JSONmerge(chanDoanIdJSON,chanDoanScoreJSON);
+           
+            //Ghép theo cách khác: 
+            var finalJSONarray= Object.assign({},thongTinPage1,thongTinPage2_3,thongTinPage4,Page5_convert,Page6_convert,chanDoanIdJSON,chanDoanScoreJSON);
+           var finalJSON= JSON.stringify(finalJSONarray);
+           console.log(finalJSON);
+
+
+            localStorage.setItem("finalJSON",finalJSON);
+        // Lưu final JSON vào danh sách bệnh nhân benhNhanData
+        // Kiểm tra xem có dữ liệu benhNhanData trong localStorage hay không
+        var storedJSONString = localStorage.getItem("benhNhanData");
+        var benhNhanData = [];
+
+        if (storedJSONString) {
+        // Nếu có dữ liệu trong localStorage, chuyển đổi thành mảng JavaScript
+        benhNhanData = JSON.parse(storedJSONString);
+        }
+        benhNhanData.unshift(finalJSONarray);
+        // Lưu benhNhanData lại vào localStorage sau khi đã thay đổi
+        localStorage.setItem("benhNhanData", JSON.stringify(benhNhanData));
+        console.log(JSON.stringify(benhNhanData));
+
+
+         // Gửi dữ liệu JSON đến Google Apps Script thông qua fetch
+    
+         fetch('https://sheetdb.io/api/v1/jw5vd2trd3b6z', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: finalJSON
+        })
+          .then((response) => response.json())
+          .then((data) => console.log(data));
+
+        // Chuyen sang cua so moi
+        
+        window.location='page9.html';
+    });
 
 
     // Hàm tạo câu hỏi dựa trên dữ liệu từ file JSON
