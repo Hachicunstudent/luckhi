@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const nextButton = document.getElementById("nextButton");
 
         // Thêm thông báo khi bắt đầu tính toán
-        alert("Quá trình tính toán đang được thực hiện...");
+        alert("Quá trình tính toán đang được thực hiện, vui lòng đợi...");
 
 
     // Tạo ra Object pattern từ biến thongTinPage5 và thongTinPage6
