@@ -2,11 +2,11 @@
 var foundPatternValues = [];
 var fullnames = []; // Thêm biến fullnames
 
-document.addEventListener("DOMContentLoaded", function () {
-    const nextButton = document.getElementById("nextButton");
+window.onload = function() {
+        const nextButton = document.getElementById("nextButton");
 
         // Thêm thông báo khi bắt đầu tính toán
-        alert("Quá trình tính toán đang được thực hiện, vui lòng đợi...");
+        alert("Quá trình tính toán đang được thực hiện...");
 
 
     // Tạo ra Object pattern từ biến thongTinPage5 và thongTinPage6
@@ -255,4 +255,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
         return outputArray;
     }
-});
+};
