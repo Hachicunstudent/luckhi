@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ sơ bệnh án Lục Khí</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">Trở về trang chủ</a>
+  </nav>
+
+  <div class="container mt-5">
+    <h1>Hồ sơ bệnh án Lục Khí</h1>
+    
+    <h2>1. Hành chính</h2>
+    <div id="hanhChinh"></div>
+    
+    <h2>2. Bệnh sử</h2>
+    <div id="benhSu"></div>
+    
+    <h2>3. Tiền sử</h2>
+    <div id="tien_Su"></div>
+    
+    <h2>4. Chẩn đoán sơ bộ</h2>
+    <table class="table">
+      <thead>
+          <tr>
+              <th>Chứng trạng</th>
+              <th>Điểm số</th>
+          </tr>
+      </thead>
+      <tbody id="chanDoan">
+      </tbody>
+    </table>
+    
+    <h2>5. Thông tin khám bệnh</h2>
+    <div id="table-container">
+      <p>Chứng trạng chung</p>
+      <table class="table">
+        <thead>
+            <tr>
+                <th>Chứng trạng</th>
+                <th>Điểm số</th>
+            </tr>
+        </thead>
+        <tbody id="info-table1">
+        </tbody>
+      </table>
+      
+      <p> Chứng trạng tạng phủ</p>
+      <table class="table">
+        <thead>
+            <tr>
+                <th>Chứng trạng</th>
+                <th>Điểm số</th>
+            </tr>
+        </thead>
+        <tbody id="info-table2">
+        </tbody>
+      </table>
+    </div>
+    
+    <h2>6. Thông tin tham khảo và điều trị</h2>
+    <div id="result">
+      <!-- Kết quả điểm số sẽ được hiển thị ở đây -->
+    </div>
+  </div>
+
+  <script src="script9.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
