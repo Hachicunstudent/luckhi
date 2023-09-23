@@ -1,0 +1,224 @@
+[
+    {
+        "sectionId": " khihaham",
+        "sectionTitle": " khihaham",
+        "pattern": [
+            {
+                "name": "ty",
+                "fullname": "tykhihaham"
+            }
+        ]
+    },
+    {
+        "sectionId": "amhu",
+        "sectionTitle": "amhu",
+        "pattern": [
+            {
+                "name": "tam",
+                "fullname": "tamamhu"
+            },
+            {
+                "name": "than",
+                "fullname": "thanamhu"
+            },
+            {
+                "name": "can",
+                "fullname": "canamhu"
+            },
+            {
+                "name": "phe",
+                "fullname": "pheamhu"
+            }
+        ]
+    },
+    {
+        "sectionId": "domchung",
+        "sectionTitle": "domchung",
+        "pattern": [
+            {
+                "name": "tam",
+                "fullname": "domhoanoinhieu"
+            },
+            {
+                "name": "tam",
+                "fullname": "dommetamkhieu"
+            },
+            {
+                "name": "phe",
+                "fullname": "phedomthap"
+            },
+            {
+                "name": "phe",
+                "fullname": "phehandam"
+            },
+            {
+                "name": "phe",
+                "fullname": "phenhietdam"
+            },
+            {
+                "name": "phe",
+                "fullname": "phetaodam"
+            },
+            {
+                "name": "phe",
+                "fullname": "phedomdich"
+            }
+        ]
+    },
+    {
+        "sectionId": "duonghukhihu",
+        "sectionTitle": "duonghukhihu",
+        "pattern": [
+            {
+                "name": "tam",
+                "fullname": "tamkhitamduonghu"
+            },
+            {
+                "name": "phe",
+                "fullname": "phekhipheduonghu"
+            },
+            {
+                "name": "ty",
+                "fullname": "tykhityduonghu"
+            },
+            {
+                "name": "than",
+                "fullname": "thanduonghu"
+            }
+        ]
+    },
+    {
+        "sectionId": "hanta",
+        "sectionTitle": "hanta",
+        "pattern": [
+            {
+                "name": "can",
+                "fullname": "hantrocanmach"
+            },
+            {
+                "name": "phe",
+                "fullname": "phehan"
+            }
+        ]
+    },
+    {
+        "sectionId": "huyethu",
+        "sectionTitle": "huyethu",
+        "pattern": [
+            {
+                "name": "tam",
+                "fullname": "tamhuyethu"
+            },
+            {
+                "name": "can",
+                "fullname": "canhuyethu"
+            },
+            {
+                "name": "ty",
+                "fullname": "tyhuyethu"
+            }
+        ]
+    },
+    {
+        "sectionId": "khidong",
+        "sectionTitle": "khidong",
+        "pattern": [
+            {
+                "name": "can",
+                "fullname": "canphongnoidong"
+            }
+        ]
+    },
+    {
+        "sectionId": "khinhiet",
+        "sectionTitle": "khinhiet",
+        "pattern": [
+            {
+                "name": "tam",
+                "fullname": "tamhoavuong"
+            },
+            {
+                "name": "can",
+                "fullname": "canhoavuong"
+            }
+        ]
+    },
+    {
+        "sectionId": "khiuat",
+        "sectionTitle": "khiuat",
+        "pattern": [
+            {
+                "name": "tam",
+                "fullname": "tamkhiuatket"
+            },
+            {
+                "name": "can",
+                "fullname": "cankhiuatket"
+            }
+        ]
+    },
+    {
+        "sectionId": "khivuong",
+        "sectionTitle": "khivuong",
+        "pattern": [
+            {
+                "name": "can",
+                "fullname": "canduongvuong"
+            }
+        ]
+    },
+    {
+        "sectionId": "machtacnghen",
+        "sectionTitle": "machtacnghen",
+        "pattern": [
+            {
+                "name": "tam",
+                "fullname": "tammachtacnghen"
+            },
+            {
+                "name": "can",
+                "fullname": "canhuyetutre"
+            },
+            {
+                "name": "tam",
+                "fullname": "tamhuyetutre"
+            }
+        ]
+    },
+    {
+        "sectionId": "nhietta",
+        "sectionTitle": "nhietta",
+        "pattern": [
+            {
+                "name": "can",
+                "fullname": "cankinhthapnhiet"
+            },
+            {
+                "name": "phe",
+                "fullname": "phenhiet"
+            },
+            {
+                "name": "phe",
+                "fullname": "phongnhietphamphe"
+            }
+        ]
+    },
+    {
+        "sectionId": "thapta",
+        "sectionTitle": "thapta",
+        "pattern": [
+            {
+                "name": "ty",
+                "fullname": "hanthapphamty"
+            },
+            {
+                "name": "ty",
+                "fullname": "thapnhietphamty"
+            },
+            {
+                "name": "phe",
+                "fullname": "phongthuyphamphe"
+            }
+        ]
+    }
+]

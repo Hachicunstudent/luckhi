@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hồ sơ bệnh án Lục Khí- Bệnh sử</title>
+        <!-- Thêm thư viện Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+            /* Tùy chỉnh kiểu CSS cho trang web của bạn */
+            body {
+                font-size: 18px; /* Font chữ to */
+                padding: 20px; /* Khoảng cách giữa nội dung và biên */
+            }
+    
+            
+    
+            /* Tùy chỉnh màu sắc và đường link */
+            .form-group {
+                margin-bottom: 20px; /* Khoảng cách giữa các trường nhập liệu */
+            }
+    
+            /* Thêm phản ánh cho thiết bị di động */
+            @media (max-width: 576px) {
+                .form-control {
+                    font-size: 16px; /* Font chữ to hơn cho thiết bị di động */
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <a href="index.html">Trở về trang chủ</a>
+    
+        <div class="container">
+            <h1>Hồ sơ bệnh án Lục Khí: Phần 2 - Bệnh sử</h1>
+            <p>Liệt kê 2 bệnh hoặc triệu chứng bạn khó chịu nhất và muốn chữa nhất kèm theo thông tin về bệnh sử vào các ô bên dưới</p>
+    
+            <h2>Triệu chứng 1:</h2>
+    <form id="symptomForm1">
+        <!-- Các trường nhập liệu ở đây, giữ nguyên như trước -->
+        <p>Câu 1: Triệu chứng hoặc bệnh mà bạn khó chịu nhất và muốn chữa nhất là gì? (ví dụ: đau đầu)</p>
+        <input type="text" name="symptom1_name" required><br>
+
+        <p>Câu 2: Thời gian bệnh bắt đầu xuất hiện là từ khi nào? (Ví dụ: Cách đây 3 năm, hoặc vào năm 2019)</p>
+        <input type="text" name="symptom1_start_date" required><br>
+
+        <p>Câu 3: Bạn đã điều trị bệnh này hoặc triệu chứng này ở đâu, bằng những thuốc nào hoặc phương pháp nào?</p>
+        <textarea name="symptom1_treatment" rows="3" required></textarea><br>
+
+        <p>Câu 4: Hiện tại triệu chứng hoặc bệnh của bạn ra sao?</p>
+        <textarea name="symptom1_current_condition" rows="3"  required></textarea><br>
+    </form>
+    
+    <!-- Nhóm triệu chứng 2 -->
+    <h2>Triệu chứng 2:</h2>
+    <form id="symptomForm2">
+        <!-- Các trường nhập liệu ở đây, giữ nguyên như trước -->
+        <p>Câu 1: Triệu chứng hoặc bệnh mà bạn khó chịu  và muốn chữa thứ hai là gì? (ví dụ: đau lưng)</p>
+        <input type="text" name="symptom2_name" ><br>
+
+        <p>Câu 2: Thời gian bệnh bắt đầu xuất hiện là từ khi nào? (Ví dụ: Cách đây 3 năm, hoặc vào năm 2019)</p>
+        <input type="text" name="symptom2_start_date" ><br>
+
+        <p>Câu 3: Bạn đã điều trị bệnh này hoặc triệu chứng này ở đâu, bằng những thuốc nào hoặc phương pháp nào?</p>
+        <textarea name="symptom2_treatment" rows="3"  ></textarea><br>
+
+        <p>Câu 4: Hiện tại triệu chứng hoặc bệnh của bạn ra sao?</p>
+        <textarea name="symptom2_current_condition" rows="3"  ></textarea><br>
+    </form>
+            <button class="btn btn-primary" onclick="saveDataAndProceedToPage4()">Tiếp</button>
+        </div>
+    
+        <!-- Thêm thư viện Bootstrap JavaScript (jQuery và Popper.js cần thiết) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function saveDataAndProceedToPage4() {
+            // Lưu dữ liệu từ biểu mẫu vào biến cục bộ thongTinPage3
+            var thongTinPage2_3 = {
+                trieuChung1: document.forms["symptomForm1"]["symptom1_name"].value,
+                thoiGian1: document.forms["symptomForm1"]["symptom1_start_date"].value,
+                dieuTri1: document.forms["symptomForm1"]["symptom1_treatment"].value,
+                trieuChungHienTai1: document.forms["symptomForm1"]["symptom1_current_condition"].value,
+                trieuChung2: document.forms["symptomForm2"]["symptom2_name"].value,
+                thoiGian2: document.forms["symptomForm2"]["symptom2_start_date"].value,
+                dieuTri2: document.forms["symptomForm2"]["symptom2_treatment"].value,
+                trieuChungHienTai2: document.forms["symptomForm2"]["symptom2_current_condition"].value
+            };
+
+            // Lưu dữ liệu vào biến cục bộ cho trang Page4.html có thể truy cập
+            localStorage.setItem("thongTinPage2_3", JSON.stringify(thongTinPage2_3));
+
+            // Chuyển đến trang Page4.html
+            window.location.href = "page4.html";
+        }
+    </script>
+</body>
+</html>
