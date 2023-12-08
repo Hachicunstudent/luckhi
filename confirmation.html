@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <title>Đăng kí thành công</title>
+    <!-- Bootstrap hoặc CSS khác nếu bạn muốn -->
+</head>
+<body>
+    <h1>Đăng kí thành công</h1>
+    <p>Họ và tên: <span id="displayFullName"></span></p>
+    <p>Số điện thoại: <span id="displayPhoneNumber"></span></p>
+    <p>Thanh toán theo thông tin sau để hoàn tất đăng kí:</p>
+    <p>Techcombank</p>
+    <p>Số tk: 19034579180016</p>
+    <p>Chủ tk: Vũ Đức Đại</p>
+    <p>Techcombank chi nhánh Hà Thành</p>
+    <p>Số tiền: <span id="displayCurrentPrice"></span></p>
+
+    <p>Nội dung ck: Ten+số điện thoại +Thietchan</p>
+
+
+    <script>
+        // Lấy thông tin từ URL
+        var urlParams = new URLSearchParams(window.location.search);
+        
+        // Hiển thị thông tin
+        document.getElementById('displayFullName').textContent = urlParams.get('fullName');
+        document.getElementById('displayPhoneNumber').textContent = urlParams.get('phoneNumber');
+        document.getElementById('displayCurrentPrice').textContent = urlParams.get('currentPrice');
+    </script>
+</body>
+</html>

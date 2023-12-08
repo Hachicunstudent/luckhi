@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng kí khóa học Thiệt Chẩn (học phần 1)</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 50px;
+        }
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .form-title {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .price-container {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .label {
+            display: block;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .price, .future-price {
+            font-weight: 700;
+            color: #007bff;
+        }
+        
+        .tomorrow-price {
+            display: block; /* Makes it go on a new line */
+            margin-top: 1px;
+        }
+        
+        .day-after-tomorrow-price {
+            display: block; /* Makes it go on a new line */
+            margin-top: 1px;
+        }
+        
+        .btn-block {
+            margin-top: 20px;
+        }
+        
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2 class="form-title">Đăng kí khóa học Thiệt Chẩn (học phần 1)</h2>
+            <form>
+                <div class="form-group">
+                    <label for="fullName">Họ và tên</label>
+                    <input type="text" class="form-control" id="fullName" placeholder="Nhập họ và tên của bạn">
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber">Số điện thoại (mà bạn sử dụng Zalo)</label>
+                    <input type="tel" class="form-control" id="phoneNumber" placeholder="Nhập số điện thoại của bạn">
+                </div>
+                <div class="price-container">
+                    <div class="price-detail">
+                        <span class="label">Giá hiện tại:</span>
+                        <span class="price">3.500.000 VNĐ</span>
+                    </div>
+                    <div class="price-detail">
+                        <span class="label">Giá ngày mai:</span>
+                        <span class="future-price tomorrow-price">3.543.200 VNĐ</span>
+                    </div>
+                    <div class="price-detail">
+                        <span class="label">Giá 10 ngày tiếp:</span>
+                        <span class="future-price day-after-tomorrow-price">3.932.400 VNĐ</span>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">Gửi</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap JS và các thư viện phụ thuộc -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.5/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Định nghĩa thời điểm bắt đầu tính giá
+        const startTime = new Date('2023-12-08T21:00:00+07:00');
+    
+        // Khởi tạo giá trị giá ban đầu và các đơn vị tăng thêm
+        let incrementUnit = 1; // Đơn vị tăng
+        let additionalTomorrow = 43200; // Số tiền thêm vào giá ngày mai
+        let additionalDayAfterTomorrow = additionalTomorrow * 10; // Số tiền thêm vào giá 10 ngày tiếp
+    
+        // Biến toàn cục để lưu giá hiện tại
+        let currentPrice = 3500000;
+    
+        // Chọn các phần tử DOM để hiển thị giá
+        const priceElement = document.querySelector('.price');
+        const tomorrowPriceElement = document.querySelector('.tomorrow-price');
+        const dayAfterTomorrowPriceElement = document.querySelector('.day-after-tomorrow-price');
+    
+        // Hàm cập nhật giá dựa trên thời gian đã trôi qua
+        function updatePrices() {
+            const currentTime = new Date();
+            const elapsedTime = (currentTime - startTime) / 1000; // Tính thời gian đã trôi qua tính bằng giây
+    
+            // Cập nhật giá hiện tại
+            currentPrice = 3500000 + Math.floor(elapsedTime) * incrementUnit;
+    
+            // Cập nhật giá trên giao diện
+            priceElement.textContent = `${currentPrice.toLocaleString('vi-VN')} VNĐ`;
+            tomorrowPriceElement.textContent = `${(currentPrice + additionalTomorrow).toLocaleString('vi-VN')} VNĐ`;
+            dayAfterTomorrowPriceElement.textContent = `${(currentPrice + additionalDayAfterTomorrow).toLocaleString('vi-VN')} VNĐ`;
+        }
+    
+        // Cập nhật giá ngay khi trang được tải
+        updatePrices();
+    
+        // Cập nhật giá mỗi giây
+        setInterval(updatePrices, 1000);
+    
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+        
+            // Lấy giá trị từ các trường input
+            var fullName = document.getElementById('fullName').value;
+            var phoneNumber = document.getElementById('phoneNumber').value;
+            var formattedPrice = currentPrice.toLocaleString('vi-VN') + ' VNĐ';
+        
+            // Tạo đối tượng JSON để gửi đến SheetDB
+            var dataToSend = {
+                "data": [
+                    {
+                        "name": fullName,            // Giả định cột "name" trong SheetDB
+                        "phone": phoneNumber,        // Giả định cột "phone" trong SheetDB
+                        "tuition": formattedPrice    // Giả định cột "tuition" trong SheetDB
+                    }
+                ]
+            };
+        
+            // Chuyển đối tượng JSON thành chuỗi JSON để gửi trong body của request
+            var finalJSONSheet = JSON.stringify(dataToSend);
+        
+            // Gửi request đến SheetDB API
+            fetch('https://sheetdb.io/api/v1/t6tbalyo17kv3', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: finalJSONSheet
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Success:', data);
+                // Chuyển hướng người dùng sau khi lưu thông tin thành công
+                window.location.href = 'confirmation.html?' + new URLSearchParams({
+                    fullName: fullName,
+                    phoneNumber: phoneNumber,
+                    currentPrice: formattedPrice
+                }).toString();
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                // Xử lý lỗi ở đây, ví dụ: hiển thị thông báo lỗi cho người dùng
+            });
+        });
+               
+        
+      
+    </script>
+    
+</body>
+</html>
