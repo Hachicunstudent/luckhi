@@ -1,23 +1,62 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng kí thành công</title>
-    <!-- Bootstrap hoặc CSS khác nếu bạn muốn -->
+    <!-- Kết nối Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        h1 {
+            color: #007bff;
+            margin-bottom: 30px;
+        }
+        .payment-info {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 0.25rem;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .payment-info p {
+            margin: 0;
+            line-height: 1.6;
+            color: #212529;
+        }
+        .payment-info p + p {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Đăng kí thành công</h1>
-    <p>Họ và tên: <span id="displayFullName"></span></p>
-    <p>Số điện thoại: <span id="displayPhoneNumber"></span></p>
-    <p>Thanh toán theo thông tin sau để hoàn tất đăng kí:</p>
-    <p>Techcombank</p>
-    <p>Số tk: 19034579180016</p>
-    <p>Chủ tk: Vũ Đức Đại</p>
-    <p>Techcombank chi nhánh Hà Thành</p>
-    <p>Số tiền: <span id="displayCurrentPrice"></span></p>
+    <div class="container">
+        <p>Họ và tên: <span id="displayFullName"></span></p>
+        <p>Số điện thoại: <span id="displayPhoneNumber"></span></p>
 
-    <p>Nội dung ck: Ten+số điện thoại +Thietchan</p>
+        <h1>Thanh toán để hoàn tất</h1>
+        <div class="payment-info">
+            <p>Thanh toán theo thông tin sau để hoàn tất đăng kí:</p>
+            <p><strong>Techcombank</strong></p>
+            <p>Số tk: <strong>19034579180016</strong></p>
+            <p>Chủ tk: <strong>Vũ Đức Đại</strong></p>
+            <p>Techcombank chi nhánh Hà Thành</p>
+            <p>Số tiền: <span id="displayCurrentPrice"></span></p>
+            <p>Nội dung ck: <span id="paymentDetail"></span></p>
+        </div>
 
+        <!-- Bootstrap và script khác nếu cần -->
+    </div>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.5/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         // Lấy thông tin từ URL
         var urlParams = new URLSearchParams(window.location.search);
@@ -26,6 +65,8 @@
         document.getElementById('displayFullName').textContent = urlParams.get('fullName');
         document.getElementById('displayPhoneNumber').textContent = urlParams.get('phoneNumber');
         document.getElementById('displayCurrentPrice').textContent = urlParams.get('currentPrice');
+        // Cập nhật nội dung chuyển khoản
+        document.getElementById('paymentDetail').textContent = urlParams.get('fullName') + '+' + urlParams.get('phoneNumber') + '+Thietchan';
     </script>
 </body>
 </html>
