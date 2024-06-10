@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/lkcbzoom/static/css/main.5b16202c.css",
+    "main.js": "/lkcbzoom/static/js/main.abab10dd.js",
+    "static/js/453.d920ffca.chunk.js": "/lkcbzoom/static/js/453.d920ffca.chunk.js",
+    "static/media/hand.jpg": "/lkcbzoom/static/media/hand.1c9efea78e69b07e6a74.jpg",
+    "index.html": "/lkcbzoom/index.html",
+    "main.5b16202c.css.map": "/lkcbzoom/static/css/main.5b16202c.css.map",
+    "main.abab10dd.js.map": "/lkcbzoom/static/js/main.abab10dd.js.map",
+    "453.d920ffca.chunk.js.map": "/lkcbzoom/static/js/453.d920ffca.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5b16202c.css",
+    "static/js/main.abab10dd.js"
+  ]
+}
